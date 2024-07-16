@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Jun 29 13:07:27 2024
-@author: Michal Wojcik
+@author: Michal Wojcik, AG Koch, FU Berlin
 """
 # Intended to run on Spyder, cell by cell (shift + enter)
 # runs only in "tensorflow" environment on my machine
+
+# runs only in "tensorflow" environment
 
 # for loading/processing the images  
 from keras.preprocessing.image import load_img 
@@ -132,6 +134,11 @@ feat.shape
 feat = feat.reshape(-1,4096)
 
 
+#%%
+
+# add length vector
+
+feat = np.column_stack((feat, length))
 
 #%%
 # save the output of VGG16
@@ -184,7 +191,3 @@ ax.scatter(x = umap_reduced[idx,0], y = umap_reduced[idx,1])
 for x0, y0, file in zip(umap_reduced[idx,0], umap_reduced[idx,1], [calls[i] for i in idx]):
     ab = AnnotationBbox(getImage(path + "/spectrograms/" + file[:-4] + ".png"), (x0, y0), frameon = False)
     ax.add_artist(ab)
-
-
-#%%
-
