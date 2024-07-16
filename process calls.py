@@ -2,10 +2,9 @@
 """
 Created on Sat Jun 29 13:07:27 2024
 
-@author: pc
+@author: Michal W
 """
-
-# runs only in "tensorflow" environment
+# runs only in "tensorflow" environment on my machine
 
 # for loading/processing the images  
 from keras.preprocessing.image import load_img 
