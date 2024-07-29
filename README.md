@@ -11,4 +11,4 @@ Limitations:
 * Reshaping can make small differences in frequency disappear. Using different scales for spectrogram can solve this problem (or cropping the interesting frequency range).
   Padding shorter signals to ensure the same format could also work but was not tested.
 * Signal-to-noise ratio is an issue. Denoise the signal if possible beforehand.
-  
+* If the sounds you want to process are long, composed of shorter segments, and are separated by silence it may be worth cropping them so that only short pieces of the record are clustered.
